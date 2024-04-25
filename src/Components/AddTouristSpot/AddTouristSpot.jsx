@@ -30,10 +30,22 @@ const AddTouristSpot = () => {
 
         const newTouristSpot = {name,photo,shortDescription,country,location,avarageCost,season,visitorsPerYear,userName,userEmail}
 
-        console.log(newTouristSpot);
+        // console.log(newTouristSpot);
 
+        // Sending data to server
+        fetch('http://localhost:5000/touristSpots',{
+            method: 'POST',
+            headers:{
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(newTouristSpot)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
     
-        e.target.reset();
+        // e.target.reset();
         toast.success('Added Successfully')
     
     }
@@ -75,7 +87,7 @@ const AddTouristSpot = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700">Short Description</label>
-                                <textarea className="w-full" name="description" rows="4" required></textarea>
+                                <textarea className="w-full border rounded-md border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" name="description" rows="4" required></textarea>
                             </div>
                             <div className="mt-5 text-center"><button className="btn btn-primary profile-button bg-green-800 border-none hover:bg-green-900">Add Spot</button></div>
                         </form>
