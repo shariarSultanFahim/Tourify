@@ -63,7 +63,7 @@ const AuthProvider = ({ children }) => {
 
       const fetchData = async () => {
         try {
-          const response = await fetch('/propertyAPI.json');
+          const response = await fetch('http://localhost:5000/touristSpots');
           const responseData = await response.json();
           setTours(responseData);
           setFilterTours(responseData);

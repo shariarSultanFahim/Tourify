@@ -7,6 +7,7 @@ import { useContext, useState } from "react";
 import OurTeam from "../OurTeam/OurTeam";
 import { BiSolidDownArrow,BiSolidUpArrow } from "react-icons/bi";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Tours from "../Tours/Tours";
 
 
 
@@ -15,25 +16,28 @@ const Home = () => {
 
 
     const [isOpenFull, setIsOpenFull] = useState(false);
-    const options = ['Bangladesh', 'Thailand', 'Indonesia', 'Malaysia', 'Vietnam','Florida','Cambodia'];
+    const options = ['Bangladesh', 'Thailand', 'Indonesia', 'Malaysia', 'Vietnam','Cambodia'];
   
     const toggleFullList = () => {
       setIsOpenFull(!isOpenFull);
     };
 
-    const {property,setFilterProperty , setShowAllBtn} = useContext(AuthContext);
-    
+    const {tours, setFilterTours ,showAllBtn, setShowAllBtn} = useContext(AuthContext);
+
 
     const filter = (filterBy) =>{
-
-        const filteredData = property.filter((item) => {
+        const filteredData = tours.filter((item) => {
             const country= item.country; 
             return (
               country.includes(filterBy)
             );
           });
-          setFilterProperty(filteredData);
-          setShowAllBtn(true);
+          setFilterTours(filteredData);
+
+          if(filterBy == '')
+            setShowAllBtn(false);
+          else
+            setShowAllBtn(true);
     }
 
 
@@ -247,7 +251,7 @@ const Home = () => {
             {/* Property Listing Header and Filter*/}
             <div className="container mx-auto my-10">
             <h1 className="text-xl pl-2 md:pl-0">
-                Top Tourists Spot
+            Top Tourists Spot
             </h1>
 
             <div className="mt-10 relative inline-block border rounded-md w-full">
@@ -289,8 +293,27 @@ const Home = () => {
                 </button>
                 
             </div>
+
+            
+            <div className="flex gap-2 justify-center">
+                <div className="dropdown">
+                    <div tabIndex={0} role="button" className="my-4 btn m-1 btn-primary bg-green-800 border-none hover:bg-green-900">Filter By</div>
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>Item 1</a></li>
+                        <li><a>Item 2</a></li>
+                    </ul>
+                </div>
+
+                <button onClick={()=>{filter('')}} 
+                className={`my-4 btn btn-primary bg-green-800 border-none hover:bg-green-900 ${showAllBtn?'':'hidden'}`}
+                >Show All</button>
+            </div>
+
+            
             
             </div>
+            {/* Tours Cards */}
+            <Tours></Tours>
 
             {/* Team Section */}
             <OurTeam></OurTeam>
