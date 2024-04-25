@@ -110,7 +110,7 @@ const OurTeam = () => {
                     <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
                         <a >Joseph Mcfall</a>
                     </h3>
-                    <p>Sales</p>
+                    <p>Tour Developer</p>
                     <ul className="flex justify-center mt-4 space-x-4">
                         <li>
                             <a  className="text-[#39569c] hover:text-gray-900 -white">
@@ -139,7 +139,7 @@ const OurTeam = () => {
                     <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
                         <a >Lana Byrd</a>
                     </h3>
-                    <p>Consultant </p>
+                    <p>Marketing Specialist</p>
                     <ul className="flex justify-center mt-4 space-x-4">
                         <li>
                             <a href="#" className="text-[#39569c] hover:text-gray-900 -white">
@@ -168,7 +168,7 @@ const OurTeam = () => {
                     <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
                         <a >Leslie Livingston</a>
                     </h3>
-                    <p>Tour Guid</p>
+                    <p>Social Media Manager</p>
                     <ul className="flex justify-center mt-4 space-x-4">
                         <li>
                             <a  className="text-[#39569c] hover:text-gray-900 -white">
