@@ -81,7 +81,7 @@ const OurTeam = () => {
                     <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
                         <a >Jese Leos</a>
                     </h3>
-                    <p>SEO & Marketing</p>
+                    <p>Tour Developer</p>
                     <ul className="flex justify-center mt-4 space-x-4">
                         <li>
                             <a  className="text-[#39569c] hover:text-gray-900 -white">
