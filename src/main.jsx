@@ -10,7 +10,6 @@ import Register from "./Components/Register/Register";
 import AuthProvider from "./Components/AuthProvider/AuthProvider";
 import PrivateRoute from "./Components/Private/PrivateRoute";
 import Profile from "./Components/Profile/Profile";
-import UpdateProfile from "./Components/Profile/UpdateProfile";
 import AllTouristsSpot from "./Components/AllTouristsSpot/AllTouristsSpot";
 import AddTouristSpot from "./Components/AddTouristSpot/AddTouristSpot";
 
@@ -28,12 +27,6 @@ const router = createBrowserRouter([
         path: '/profile',
         element:<PrivateRoute>
           <Profile></Profile>
-        </PrivateRoute>
-      },
-      {
-        path:'/updateProfile',
-        element: <PrivateRoute>
-          <UpdateProfile></UpdateProfile>
         </PrivateRoute>
       },
       {

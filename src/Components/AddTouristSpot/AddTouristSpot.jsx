@@ -12,7 +12,7 @@ const AddTouristSpot = () => {
     useEffect(()=>{
         Aos.init();
     },[])
-    useDocumentTitle('Update Profile');
+    useDocumentTitle('Add Tourist Spot');
     const {user} = useContext(AuthContext);
 
     const handleAddNewTouristSpot =(e)=>{
