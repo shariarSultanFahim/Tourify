@@ -124,6 +124,7 @@ const Home = () => {
 
                     </div>
                 </SwiperSlide>
+
                 <SwiperSlide  >
                     <div className="relative">
                     
@@ -143,6 +144,75 @@ const Home = () => {
                         </div>
 
                         <img className="w-full h-full absolue z-10 lg:-translate-y-[10%]" src="https://content.r9cdn.net/rimg/dimg/26/5b/01e97574-city-26166-1592813274a.jpg?width=1366&height=768&xhint=1038&yhint=725&crop=true"/>  
+
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide  >
+                    <div className="relative">
+                    
+                        <h1 className="text-center animate__animated animate__bounceInLeft text-3xl md:text-6xl lg:font-bold left-[50%] top-[30%] -translate-x-[50%] -translate-y-[30%]   absolute z-50 text-white ">Ha Long Bay
+                        <br />
+                        <span className="text-sm md:text-xl lg:text-3xl font-thin">
+                        <Typewriter 
+                            words={['Worlds Prettiest Place']}
+                            loop={5}
+                            cursor
+                            cursorStyle='_'
+                        />
+                        </span>
+                        </h1>
+
+                        <div className="absolute z-30 w-full h-full bg-black bg-opacity-30">
+                        </div>
+
+                        <img className="w-full h-full absolue z-10 lg:-translate-y-[10%]" src="https://lp-cms-production.imgix.net/features/2019/04/HalongBay-aa0f7e71a1db.jpg"/>  
+
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide  >
+                    <div className="relative">
+                    
+                        <h1 className="text-center animate__animated animate__bounceInLeft text-3xl md:text-6xl lg:font-bold left-[50%] top-[30%] -translate-x-[50%] -translate-y-[30%]   absolute z-50 text-white ">Panang
+                        <br />
+                        <span className="text-sm md:text-xl lg:text-3xl font-thin">
+                        <Typewriter 
+                            words={['Northwest Malaysia']}
+                            loop={5}
+                            cursor
+                            cursorStyle='_'
+                        />
+                        </span>
+                        </h1>
+
+                        <div className="absolute z-30 w-full h-full bg-black bg-opacity-30">
+                        </div>
+
+                        <img className="w-full h-full absolue z-10 lg:-translate-y-[10%]" src="https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2023/09/07/b8e6b2d2c95f445ba3c9463018740156_Penang_Header.jpg"/>  
+
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide  >
+                    <div className="relative">
+                    
+                        <h1 className="text-center animate__animated animate__bounceInLeft text-3xl md:text-6xl lg:font-bold left-[50%] top-[30%] -translate-x-[50%] -translate-y-[30%]   absolute z-50 text-white ">Yogyakarta
+                        <br />
+                        <span className="text-sm md:text-xl lg:text-3xl font-thin">
+                        <Typewriter 
+                            words={['City Ruled by Monarchy']}
+                            loop={5}
+                            cursor
+                            cursorStyle='_'
+                        />
+                        </span>
+                        </h1>
+
+                        <div className="absolute z-30 w-full h-full bg-black bg-opacity-30">
+                        </div>
+
+                        <img className="w-full h-full absolue z-10 lg:-translate-y-[10%]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Yogyakarta_Indonesia_Tugu-Yogyakarta-02.jpg/1200px-Yogyakarta_Indonesia_Tugu-Yogyakarta-02.jpg"/>  
 
                     </div>
                 </SwiperSlide>
