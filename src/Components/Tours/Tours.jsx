@@ -5,7 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 
 const Tours = () => {
-    const {filterTours, apiLoading} = useContext(AuthContext);
+    const {filterSortTours, apiLoading} = useContext(AuthContext);
 
     return (
         <div>
@@ -16,7 +16,7 @@ const Tours = () => {
                 <Skeleton count={10}/>
                 </>
                 :
-                filterTours.map((tour, idx)=> <h1 key={idx}>{tour.name}</h1>)
+                filterSortTours.map((tour, idx)=> <h1 key={idx}>{tour.name}</h1>)
             }
             
         </div>

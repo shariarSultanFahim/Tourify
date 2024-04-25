@@ -22,8 +22,7 @@ const Home = () => {
       setIsOpenFull(!isOpenFull);
     };
 
-    const {tours, setFilterTours ,showAllBtn, setShowAllBtn} = useContext(AuthContext);
-
+    const {tours, filterSortTours,setFilterSortTours,showAllBtn, setShowAllBtn} = useContext(AuthContext);
 
     const filter = (filterBy) =>{
         const filteredData = tours.filter((item) => {
@@ -32,12 +31,33 @@ const Home = () => {
               country.includes(filterBy)
             );
           });
-          setFilterTours(filteredData);
+          setFilterSortTours(filteredData);
 
           if(filterBy == '')
             setShowAllBtn(false);
           else
             setShowAllBtn(true);
+    }
+
+    const sort = (sortBy) =>{
+        if(sortBy == 'avarageCost'){
+            const sortTours = filterSortTours.sort((a,b)=>{
+                const costA = parseFloat(a.avarageCost.split(' ')[1]);
+                const costB = parseFloat(b.avarageCost.split(' ')[1]);
+                return costA - costB;
+            });
+            setFilterSortTours(sortTours);
+
+        }
+        else if(sortBy == 'visitors'){
+            const sortTours = filterSortTours.sort((a,b)=>{
+                const costA = parseFloat(a.visitorsPerYear.split(' ')[0]);
+                const costB = parseFloat(b.visitorsPerYear.split(' ')[0]);
+                return costA - costB;
+            });
+            setFilterSortTours(sortTours);
+        }
+        
     }
 
 
@@ -297,10 +317,10 @@ const Home = () => {
             
             <div className="flex gap-2 justify-center">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="my-4 btn m-1 btn-primary bg-green-800 border-none hover:bg-green-900">Filter By</div>
+                    <div tabIndex={0} role="button" className="my-4 btn m-1 btn-primary bg-green-800 border-none hover:bg-green-900">Sort</div>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
+                        <li><a onClick={()=>{sort('avarageCost')}}>Avarage Cost</a></li>
+                        <li><a onClick={()=>{sort('visitors')}}>Visitors</a></li>
                     </ul>
                 </div>
 
