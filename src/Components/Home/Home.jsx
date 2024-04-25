@@ -245,13 +245,13 @@ const Home = () => {
             </div>
 
             {/* Property Listing Header and Filter*/}
-            <div className=" container mx-auto my-10">
-            <h1 className="font-jetBrains text-xl pl-2 md:pl-0">
+            <div className="container mx-auto my-10">
+            <h1 className="text-xl pl-2 md:pl-0">
                 Top Tourists Spot
             </h1>
 
             <div className="mt-10 relative inline-block border rounded-md w-full">
-                <div className="overflow-hidden bg-white rounded-md ">
+                <div className="overflow-hidden rounded-md ">
                     {!isOpenFull && (
                         <ul className="py-1 grid grid-cols-3 items-center">
                         {options.slice(0, 3).map((option, index) => (

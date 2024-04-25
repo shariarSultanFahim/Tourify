@@ -6,6 +6,7 @@ export const AuthContext = createContext(null);
 
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
+    const [theme, setTheme] = useState('light');
     const [user,setUser] = useState(null)
     const [userName, setUserName] = useState(null);
     const [isLoading,setLoading] = useState(true);
@@ -80,6 +81,8 @@ const AuthProvider = ({ children }) => {
       
 
     const authInfo={
+        theme, 
+        setTheme,
         isLoading,
         registerUser,
         loginUser,

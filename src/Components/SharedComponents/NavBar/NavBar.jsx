@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Link,NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Aos from "aos";
@@ -9,9 +9,9 @@ const NavBar = () => {
         Aos.init();
     },[])
     
-    const [theme, setTheme] = useState('light');
+    
       
-    const {isLoading,user,userName,setUserName,logOut,currentPhoto,setCurrentPhoto} = useContext(AuthContext);
+    const {theme, setTheme,isLoading,user,userName,setUserName,logOut,currentPhoto,setCurrentPhoto} = useContext(AuthContext);
 
     const handleToggleTheme = (e) => {
         if(e.target.checked) {

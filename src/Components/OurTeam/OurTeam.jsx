@@ -1,26 +1,29 @@
 import Aos from "aos";
 import 'aos/dist/aos.css'
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import useWindowSize from "../../CustomHook/windowSize";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const OurTeam = () => {
     const {width} = useWindowSize();
+    const {theme} = useContext(AuthContext);
     
     useEffect(()=>{
         Aos.init();
     },[])
     
     return (
-        <section data-aos="fade-down" className="container mx-auto bg-white my-10">
+        <section data-aos="fade-down" className="container mx-auto my-10">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
             <div className="mx-auto mb-8 max-w-screen-sm lg:mb-16">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Our team</h2>
+                <h2 className={`mb-4 text-4xl tracking-tight font-extrabold
+                ${theme==='light'?'text-gray-900':''}`}>Our team</h2>
                 <p className="font-light text-gray-500 sm:text-xl">Looking for a team that puts you first? Our crew brings a wealth of experience to the table. We are committed to understanding your needs and developing solutions that exceed your expectations.</p>
             </div> 
             <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 <div data-aos={(width<1024)?'fade-up':'fade-right'} className="text-center text-gray-500">
                     <img className="mx-auto mb-4 w-36 h-36 rounded-full" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpiha8p89vQmvPl_Z6BZQkMF0aCf4Qma-OFfRHMEeKnc6qy5-awpy43dVanaa9tWLePGCRzZa4lK1PRAElenMg0B0cBMlEkEv6cjE=w1960-h3184"/>
-                    <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
+                    <h3 className={`mb-1 text-2xl font-bold tracking-tight ${theme==='light'?'text-gray-900':''}`}>
                         <a >Shariar Sultan</a>
                     </h3>
                     <p>CEO</p>
@@ -49,7 +52,7 @@ const OurTeam = () => {
                 </div>
                 <div data-aos={(width<1024)?'fade-up':'fade-right'} className="overflow-hidden text-center text-gray-500">
                     <img className="mx-auto mb-4 w-36 h-36 rounded-full" src="https://i.insider.com/634daeb46bd527001914ffc5?width=433&format=jpeg" alt="Helene Avatar"/>
-                    <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
+                    <h3 className={`mb-1 text-2xl font-bold tracking-tight ${theme==='light'?'text-gray-900':''}`}>
                         <a >Ted Mosby</a>
                     </h3>
                     <p>CTO</p>
@@ -78,7 +81,7 @@ const OurTeam = () => {
                 </div>
                 <div data-aos={(width<1024)?'fade-up':'fade-left'} className="text-center text-gray-500">
                     <img className="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Avatar"/>
-                    <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
+                    <h3 className={`mb-1 text-2xl font-bold tracking-tight ${theme==='light'?'text-gray-900':''}`}>
                         <a >Jese Leos</a>
                     </h3>
                     <p>Tour Developer</p>
@@ -107,7 +110,7 @@ const OurTeam = () => {
                 </div>
                 <div data-aos={(width<1024)?'fade-up':'fade-left'} className="text-center text-gray-500">
                     <img className="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="Joseph Avatar"/>
-                    <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
+                    <h3 className={`mb-1 text-2xl font-bold tracking-tight ${theme==='light'?'text-gray-900':''}`}>
                         <a >Joseph Mcfall</a>
                     </h3>
                     <p>Tour Developer</p>
@@ -136,7 +139,7 @@ const OurTeam = () => {
                 </div>
                 <div data-aos={(width<1024)?'fade-up':'fade-right'} className="text-center text-gray-500">
                     <img className="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png" alt="Sofia Avatar"/>
-                    <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
+                    <h3 className={`mb-1 text-2xl font-bold tracking-tight ${theme==='light'?'text-gray-900':''}`}>
                         <a >Lana Byrd</a>
                     </h3>
                     <p>Marketing Specialist</p>
@@ -165,7 +168,7 @@ const OurTeam = () => {
                 </div>
                 <div data-aos={(width<1024)?'fade-up':'fade-right'} className="text-center text-gray-500">
                     <img className="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/thomas-lean.png" alt="Leslie Avatar"/>
-                    <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
+                    <h3 className={`mb-1 text-2xl font-bold tracking-tight ${theme==='light'?'text-gray-900':''}`}>
                         <a >Leslie Livingston</a>
                     </h3>
                     <p>Social Media Manager</p>
@@ -194,7 +197,7 @@ const OurTeam = () => {
                 </div>
                 <div data-aos={(width<1024)?'fade-up':'fade-left'} className="text-center text-gray-500">
                     <img className="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Michael Avatar"/>
-                    <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
+                    <h3 className={`mb-1 text-2xl font-bold tracking-tight ${theme==='light'?'text-gray-900':''}`}>
                         <a >Michael Gough</a>
                     </h3>
                     <p>Tour Guid</p>
@@ -223,7 +226,7 @@ const OurTeam = () => {
                 </div>
                 <div data-aos={(width<1024)?'fade-up':'fade-left'} className="text-center text-gray-500">
                     <img className="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/neil-sims.png" alt="Neil Avatar"/>
-                    <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
+                    <h3 className={`mb-1 text-2xl font-bold tracking-tight ${theme==='light'?'text-gray-900':''}`}>
                         <a >Neil Sims</a>
                     </h3>
                     <p>Tour Guid</p>
