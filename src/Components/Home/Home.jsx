@@ -216,6 +216,30 @@ const Home = () => {
 
                     </div>
                 </SwiperSlide>
+
+                <SwiperSlide  >
+                    <div className="relative">
+                    
+                        <h1 className="text-center animate__animated animate__bounceInLeft text-3xl md:text-6xl lg:font-bold left-[50%] top-[30%] -translate-x-[50%] -translate-y-[30%]   absolute z-50 text-white ">Phi Phi Islands
+
+                        <br />
+                        <span className="text-sm md:text-xl lg:text-3xl font-thin">
+                        <Typewriter 
+                            words={['An island group in Thailand']}
+                            loop={5}
+                            cursor
+                            cursorStyle='_'
+                        />
+                        </span>
+                        </h1>
+
+                        <div className="absolute z-30 w-full h-full bg-black bg-opacity-30">
+                        </div>
+
+                        <img className="w-full h-full absolue z-10 lg:-translate-y-[10%]" src="https://a.cdn-hotels.com/gdcs/production115/d361/49459e8d-eb1e-46a7-8a3b-269f54958346.jpg"/>  
+
+                    </div>
+                </SwiperSlide>
                 
                 </Swiper>
             </div>
