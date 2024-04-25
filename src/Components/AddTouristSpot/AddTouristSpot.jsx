@@ -1,9 +1,91 @@
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import {toast, Toaster} from "react-hot-toast"
+import useDocumentTitle from "../../CustomHook/useDocumentTitle";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+
 
 
 const AddTouristSpot = () => {
+    useEffect(()=>{
+        Aos.init();
+    },[])
+    useDocumentTitle('Update Profile');
+    const {user} = useContext(AuthContext);
+
+    const handleAddNewTouristSpot =(e)=>{
+        e.preventDefault();
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const shortDescription = e.target.description.value;
+        const country = e.target.country.value;
+        const location = e.target.location.value;
+        const avarageCost = e.target.avarageCost.value;
+        const season = e.target.season.value;
+        const visitorsPerYear = e.target.visitors.value;
+        const userName = user.displayName;
+        const userEmail = user.email;
+
+        const newTouristSpot = {name,photo,shortDescription,country,location,avarageCost,season,visitorsPerYear,userName,userEmail}
+
+        console.log(newTouristSpot);
+
+    
+        e.target.reset();
+        toast.success('Added Successfully')
+    
+    }
     return (
-        <div>
+        <div className="container mx-auto min-h-screen">
+            <h1 className="text-center font-medium text-2xl md:text-4xl">Add New Tourist Spot</h1>
+        
+            <div  data-aos="fade-up" className=" rounded  p-5 shadow-md">
+                    <div className="w-full shadow sm:rounded-lg">
+                    <div  className="px-4 py-8">
+                        <form onSubmit={handleAddNewTouristSpot} className="space-y-2 md:space-y-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                <div><label className="block text-sm font-medium text-gray-700">Tourist Spot Name</label>
+                                <input type="text" name="name" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Spot Name" required /></div>
+
+                                <div><label className="block text-sm font-medium text-gray-700">Photo</label>
+                                <input type="text" name="photo" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Photo url" required/></div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                <div><label className="block text-sm font-medium text-gray-700">Country Name</label>
+                                <input type="text" name="country" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Country" required/></div>
+
+                                <div><label className="block text-sm font-medium text-gray-700">Location</label>
+                                <input type="text" name="location" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Location" required/></div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                <div><label className="block text-sm font-medium text-gray-700">Avarage Cost</label>
+                                <input type="number" name="avarageCost" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Avarage Cost" required/></div>
+
+                                <div><label className="block text-sm font-medium text-gray-700">Seasonality</label>
+                                <input type="text" name="season" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="like- summer, winter etc" required/></div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                <div><label className="block text-sm font-medium text-gray-700">Travel Time</label>
+                                <input type="text" name="travelTime" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="like- 3 Days" required/></div>
+
+                                <div><label className="block text-sm font-medium text-gray-700">Total Visitors per Year</label>
+                                <input type="number" name="visitors" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="like- 10000" required/></div>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700">Short Description</label>
+                                <textarea className="w-full" name="description" rows="4" required></textarea>
+                            </div>
+                            <div className="mt-5 text-center"><button className="btn btn-primary profile-button bg-green-800 border-none hover:bg-green-900">Add Spot</button></div>
+                        </form>
+                        
+                    </div>
+                    </div>
             
+            </div>
+        <div><Toaster position="top-right"/></div>
+
         </div>
     );
 };

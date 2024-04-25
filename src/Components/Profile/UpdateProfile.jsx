@@ -11,6 +11,7 @@ const UpdateProfile = () => {
         Aos.init();
     },[])
     useDocumentTitle('Update Profile');
+    
     const {user,setUserName,currentPhoto, setCurrentPhoto} = useContext(AuthContext);
 
     const [currentName, setCurrentName] = useState(user.displayName);
@@ -51,6 +52,7 @@ const UpdateProfile = () => {
 
     return (
         <div className="container mx-auto my-10 min-h-screen">
+        
         <div  data-aos="fade-up" className=" rounded  p-5 shadow-md">
         <div className="flex flex-col md:flex-row gap-6">
 
@@ -92,7 +94,11 @@ const UpdateProfile = () => {
             </div>
             </div>
         </div>
-        </div><div><Toaster position="top-right"/></div></div>
+        </div>
+        <div><Toaster position="top-right"/></div>
+        
+        
+        </div>
     );
 };
 
