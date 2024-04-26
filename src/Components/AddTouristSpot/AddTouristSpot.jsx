@@ -23,11 +23,12 @@ const AddTouristSpot = () => {
         const location = e.target.location.value;
         const avarageCost = 'USD ' + e.target.avarageCost.value + ' per day';
         const season = e.target.season.value;
+        const travelTime = e.target.travelTime.value;
         const visitorsPerYear = e.target.visitors.value;
         const userName = user.displayName;
         const userEmail = user.email;
 
-        const newTouristSpot = {name,photo,shortDescription,country,location,avarageCost,season,visitorsPerYear,userName,userEmail}
+        const newTouristSpot = {name,photo,shortDescription,country,location,avarageCost,season,travelTime,visitorsPerYear,userName,userEmail}
 
         // console.log(newTouristSpot);
 
