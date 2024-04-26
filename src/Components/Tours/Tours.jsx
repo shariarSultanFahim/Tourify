@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -6,10 +6,12 @@ import TourCards from "./TourCards";
 
 
 const Tours = () => {
-    const {sortedTours, apiLoading} = useContext(AuthContext);
+    const {tours,apiLoading} = useContext(AuthContext);
+    
+    
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {
                 apiLoading?
                 <>
@@ -17,7 +19,7 @@ const Tours = () => {
                 <Skeleton count={10}/>
                 </>
                 :
-                sortedTours.slice(0, 6).map((tour, idx)=> <TourCards key={idx} tour={tour}/>)
+                tours?.slice(0, 6).map((tour, idx)=> <TourCards key={idx} tour={tour}/>)
             }
             
         </div>

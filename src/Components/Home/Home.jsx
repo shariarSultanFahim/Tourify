@@ -12,20 +12,11 @@ import Tours from "../Tours/Tours";
 const Home = () => {
     useDocumentTitle('Home');
 
-
-    
-
-
-    
-
-   
-
-
     return (
         <div className="container mx-auto min-h-screen">
             
             {/* Corousel Banner */}
-            <div className="mx-auto w-[95%] h-[170px] md:w-full md:h-[500px] overflow-hidden rounded-lg">
+            <div className="mx-auto w-[98%] h-[170px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">
                 <Swiper
                  modules={[Pagination, Scrollbar, A11y,Autoplay]}
                  autoplay={{
@@ -231,7 +222,7 @@ const Home = () => {
             {/* Property Listing Header and Filter*/}
             <div className="container mx-auto my-10">
             <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-light pl-2 md:pl-0">
-            Most Popular <span className="font-medium">Tours</span>
+            Most Popular <span className="md:font-bold">Tours</span>
             </h1>
             
             </div>

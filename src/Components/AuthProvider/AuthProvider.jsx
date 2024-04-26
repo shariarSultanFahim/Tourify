@@ -67,6 +67,7 @@ const AuthProvider = ({ children }) => {
           const responseData = await response.json();
           setTours(responseData);
           setSortedTours(responseData);
+
         } catch (error) {
           setError(error);  
         } finally {
@@ -102,7 +103,7 @@ const AuthProvider = ({ children }) => {
         sortedTours,
         setSortedTours,
         showAllBtn ,
-        setShowAllBtn
+        setShowAllBtn,
         
     }
     

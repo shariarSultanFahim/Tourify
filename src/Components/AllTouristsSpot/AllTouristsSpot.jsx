@@ -63,8 +63,8 @@ const AllTouristsSpot = () => {
 
     return (
         <div className="container mx-auto my-10">
-             <h1 className="pb-10 text-center text-3xl md:text-4xl lg:text-5xl font-light pl-2 md:pl-0">
-            Popular <span className="font-medium">Tours</span>
+             <h1 className="lg:pb-10 text-center text-3xl md:text-4xl lg:text-5xl font-light">
+            Popular <span className="font-medium md:font-bold">Tours</span>
             </h1>
 
             <div className="mt-10 relative inline-block border rounded-md w-full">

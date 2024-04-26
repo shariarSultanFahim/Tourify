@@ -74,7 +74,7 @@ const AddTouristSpot = () => {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                 <div><label className="block text-sm font-medium text-gray-700">Avarage Cost</label>
-                                <input type="text" name="avarageCost" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Avarage Cost" required/></div>
+                                <input type="text" name="avarageCost" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="like- USD 00 per day" required/></div>
 
                                 <div><label className="block text-sm font-medium text-gray-700">Seasonality</label>
                                 <input type="text" name="season" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="like- summer, winter etc" required/></div>
