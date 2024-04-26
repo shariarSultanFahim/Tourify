@@ -63,9 +63,10 @@ const AllTouristsSpot = () => {
 
     return (
         <div className="container mx-auto my-10">
-             <h1 className="lg:pb-10 text-center text-3xl md:text-4xl lg:text-5xl font-light">
-            Popular <span className="font-medium md:font-bold">Tours</span>
+             <h1 className="pb-6 text-center text-2xl md:text-4xl lg:text-5xl font-light">
+             Find Your Perfect <span className="font-medium md:font-bold text-green-800">Tour</span>
             </h1>
+            <p className="lg:pb-4 mx-auto w-3/4 md:w-1/2 text-center opacity-70">Discover a world of exciting tours to suit every traveler. From bucket-list adventures to hidden gems, we have the perfect tour for you</p>
 
             <div className="mt-10 relative inline-block border rounded-md w-full">
                 <div className="overflow-hidden rounded-md ">

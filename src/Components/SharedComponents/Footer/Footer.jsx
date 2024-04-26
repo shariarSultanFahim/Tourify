@@ -8,7 +8,9 @@ const Footer = () => {
                     <img src="/src/assets/Tourify.png" alt="" />
                 </p>
                 <p>Tourify - Your Tour Partner<br/>Providing reliable tour plans since 2008</p>
-            </aside> 
+                <p>Copyright © 2024 - All right reserved </p>
+            </aside>
+            
             <nav>
                 <h6 className="footer-title">Social</h6> 
                 <div className="grid grid-flow-col gap-4">

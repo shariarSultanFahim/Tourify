@@ -220,10 +220,12 @@ const Home = () => {
             </div>
 
             {/* Property Listing Header and Filter*/}
-            <div className="container mx-auto my-10">
-            <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-light pl-2 md:pl-0">
-            Most Popular <span className="md:font-bold">Tours</span>
+            <div className="container mx-auto mt-10 md:mt-16 lg:mt-32 mb-10">
+            <h1 className="pb-6 text-center text-2xl md:text-4xl lg:text-5xl font-light">
+            Unveiling Hidden <span className="font-medium md:font-bold text-green-800">Gems</span>
             </h1>
+            <p className="lg:pb-4 mx-auto w-3/4 md:w-1/2 text-center opacity-70">Explore unique destinations and off-the-beaten-path experiences on our most sought-after tours</p>
+            
             
             </div>
             {/* Tours Cards */}

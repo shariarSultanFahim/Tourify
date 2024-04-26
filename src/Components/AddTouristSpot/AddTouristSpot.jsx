@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { updateProfile } from "firebase/auth";
 import {toast, Toaster} from "react-hot-toast"
 import useDocumentTitle from "../../CustomHook/useDocumentTitle";
 import Aos from "aos";
@@ -22,7 +21,7 @@ const AddTouristSpot = () => {
         const shortDescription = e.target.description.value;
         const country = e.target.country.value;
         const location = e.target.location.value;
-        const avarageCost = e.target.avarageCost.value;
+        const avarageCost = 'USD ' + e.target.avarageCost.value + ' per day';
         const season = e.target.season.value;
         const visitorsPerYear = e.target.visitors.value;
         const userName = user.displayName;
@@ -51,8 +50,10 @@ const AddTouristSpot = () => {
         })
     }
     return (
-        <div className="container mx-auto min-h-screen">
-            <h1 className="text-center font-medium text-2xl md:text-4xl">Add New Tourist Spot</h1>
+        <div className="container mx-auto min-h-screen my-10">
+            <h1 className="pb-6 text-center text-2xl md:text-4xl lg:text-5xl font-light">
+             Add New Tourist <span className="font-medium md:font-bold text-green-800">Spot</span>
+            </h1>
         
             <div  data-aos="fade-up" className=" rounded  p-5 shadow-md">
                     <div className="w-full shadow sm:rounded-lg">
@@ -73,8 +74,8 @@ const AddTouristSpot = () => {
                                 <input type="text" name="location" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Location" required/></div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <div><label className="block text-sm font-medium text-gray-700">Avarage Cost</label>
-                                <input type="text" name="avarageCost" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="like- USD 00 per day" required/></div>
+                                <div><label className="block text-sm font-medium text-gray-700">Avarage Cost Per Day</label>
+                                <input type="number" name="avarageCost" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="USD" required/></div>
 
                                 <div><label className="block text-sm font-medium text-gray-700">Seasonality</label>
                                 <input type="text" name="season" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="like- summer, winter etc" required/></div>

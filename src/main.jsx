@@ -13,6 +13,7 @@ import Profile from "./Components/Profile/Profile";
 import AllTouristsSpot from "./Components/AllTouristsSpot/AllTouristsSpot";
 import AddTouristSpot from "./Components/AddTouristSpot/AddTouristSpot";
 import TourDetails from "./Components/Tours/TourDetails";
+import MyTours from "./Components/MyTours/MyTours";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,12 @@ const router = createBrowserRouter([
         path:'/tourDetails/:id',
         element:<PrivateRoute>
           <TourDetails></TourDetails>
+        </PrivateRoute>
+      },
+      {
+        path:'/myTourList',
+        element:<PrivateRoute>
+          <MyTours></MyTours>
         </PrivateRoute>
       }
     ]

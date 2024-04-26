@@ -38,7 +38,7 @@ const NavBar = () => {
         user&&<NavLink to='/addTouristSpot' className={({ isActive }) => isActive ? 'px-3 py-2 bg-green-700 border-[1px] rounded-xl text-white' : 'btn-ghost  px-3 py-2 rounded-xl'}>Add Tourists Spot</NavLink>
     }
     {
-        user&&<NavLink to='/myList' className={({ isActive }) => isActive ? 'px-3 py-2 bg-green-700 border-[1px] rounded-xl text-white' : 'btn-ghost  px-3 py-2 rounded-xl'}>My List</NavLink>
+        user&&<NavLink to='/myTourList' className={({ isActive }) => isActive ? 'px-3 py-2 bg-green-700 border-[1px] rounded-xl text-white' : 'btn-ghost  px-3 py-2 rounded-xl'}>My List</NavLink>
     }
     
     
