@@ -270,8 +270,8 @@ const Home = () => {
 
             {/* Property Listing Header and Filter*/}
             <div className="container mx-auto my-10">
-            <h1 className="text-xl pl-2 md:pl-0">
-            Top Tourists Spot
+            <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-light pl-2 md:pl-0">
+            Most Popular <span className="font-medium">Tours</span>
             </h1>
 
             <div className="mt-10 relative inline-block border rounded-md w-full">

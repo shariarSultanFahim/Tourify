@@ -12,6 +12,7 @@ import PrivateRoute from "./Components/Private/PrivateRoute";
 import Profile from "./Components/Profile/Profile";
 import AllTouristsSpot from "./Components/AllTouristsSpot/AllTouristsSpot";
 import AddTouristSpot from "./Components/AddTouristSpot/AddTouristSpot";
+import TourDetails from "./Components/Tours/TourDetails";
 
 const router = createBrowserRouter([
   {
@@ -46,14 +47,13 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <AddTouristSpot></AddTouristSpot>
         </PrivateRoute>
+      },
+      {
+        path:'/tourDetails/:id',
+        element:<PrivateRoute>
+          <TourDetails></TourDetails>
+        </PrivateRoute>
       }
-      // {
-      //   path:'/estateDetails/:id',
-      //   element:<PrivateRoute>
-      //     <TourDetails></TourDetails>
-      //   </PrivateRoute>
-      // },
-      
     ]
   },
 ]);
