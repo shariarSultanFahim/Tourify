@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <footer className=" p-10 bg-neutral text-neutral-content">
-            <div className="footer container mx-auto md:justify-between">
+            <div className="footer md:container mx-auto md:justify-between">
             <aside>
                 <p className="h-12 w-12">
                     <img src="src/assets/Tourify.png" alt="" />

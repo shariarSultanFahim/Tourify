@@ -11,7 +11,7 @@ const Tours = () => {
     
 
     return (
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="md:container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {
                 apiLoading?
                 <>

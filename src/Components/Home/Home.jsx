@@ -13,7 +13,7 @@ const Home = () => {
     useDocumentTitle('Home');
 
     return (
-        <div className="container mx-auto min-h-screen">
+        <div className="md:container mx-auto min-h-screen">
             
             {/* Corousel Banner */}
             <div className="mx-auto w-[98%] h-[170px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">
@@ -220,7 +220,7 @@ const Home = () => {
             </div>
 
             {/* Property Listing Header and Filter*/}
-            <div className="container mx-auto mt-10 md:mt-16 lg:mt-32 mb-10">
+            <div className="md:container mx-auto mt-10 md:mt-16 lg:mt-32 mb-10">
             <h1 className="pb-6 text-center text-2xl md:text-4xl lg:text-5xl font-light">
             Unveiling Hidden <span className="font-medium md:font-bold text-green-800">Gems</span>
             </h1>

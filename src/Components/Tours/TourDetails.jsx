@@ -22,7 +22,7 @@ const TourDetails = () => {
         })
     })
     return (
-        <div className="container mx-auto min-h-screen ">
+        <div className="md:container mx-auto min-h-screen ">
             <div className="mx-auto relative">
             <div className="absolute w-full h-[400px] rounded-lg bg-center bg-cover bg-no-repeat" 
             style={{backgroundImage:`url(${currentTour?.photo})`}}></div>

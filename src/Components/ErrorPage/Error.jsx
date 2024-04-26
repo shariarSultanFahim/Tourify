@@ -3,7 +3,7 @@ import { BsArrowLeftShort } from "react-icons/bs";
 
 const Error = () => {
     return (
-        <div className="container mx-auto">
+        <div className="md:container mx-auto">
             <div className="h-80 mt-10 ">
                 <img className="mx-auto h-full" src="src/assets/Lost Tourist-big.png" alt="" />
             </div>

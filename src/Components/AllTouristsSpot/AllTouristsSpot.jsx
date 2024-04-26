@@ -62,7 +62,7 @@ const AllTouristsSpot = () => {
     
 
     return (
-        <div className="container mx-auto my-10">
+        <div className="md:container mx-auto my-10">
              <h1 className="pb-6 text-center text-2xl md:text-4xl lg:text-5xl font-light">
              Find Your Perfect <span className="font-medium md:font-bold text-green-800">Tour</span>
             </h1>

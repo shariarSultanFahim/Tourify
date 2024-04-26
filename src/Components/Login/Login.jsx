@@ -69,7 +69,7 @@ const Login = () => {
     },[user]);  
 
     return (
-        <div className="container mx-auto hero min-h-screen ">
+        <div className="md:container mx-auto hero min-h-screen ">
             <div className="hero-content flex-col">
                 
 

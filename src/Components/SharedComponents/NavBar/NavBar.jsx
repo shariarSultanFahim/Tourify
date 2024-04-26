@@ -45,7 +45,7 @@ const NavBar = () => {
     </>
 
     return (
-        <div data-aos="fade-down" className="relative z-[999] py-4 mb-4 container mx-auto navbar ">
+        <div data-aos="fade-down" className="relative z-[999] py-4 mb-4 md:md:container mx-auto navbar ">
             <div className="navbar-start">
                 <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
