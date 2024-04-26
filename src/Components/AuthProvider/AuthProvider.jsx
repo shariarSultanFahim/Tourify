@@ -59,14 +59,14 @@ const AuthProvider = ({ children }) => {
       const [tours, setTours] = useState(null);
       const [apiLoading, setApiLoading] = useState(true);
       const [error, setError] = useState(null);
-      const [filterSortTours, setFilterSortTours] = useState(null);
+      const [sortedTours, setSortedTours] = useState(null);
 
       const fetchData = async () => {
         try {
           const response = await fetch('http://localhost:5000/touristSpots');
           const responseData = await response.json();
           setTours(responseData);
-          setFilterSortTours(responseData);
+          setSortedTours(responseData);
         } catch (error) {
           setError(error);  
         } finally {
@@ -97,11 +97,12 @@ const AuthProvider = ({ children }) => {
         currentPhoto, 
         setCurrentPhoto,
         tours,
+        setTours,
         apiLoading,
-        filterSortTours,
-        setFilterSortTours,
+        sortedTours,
+        setSortedTours,
         showAllBtn ,
-        setShowAllBtn,
+        setShowAllBtn
         
     }
     

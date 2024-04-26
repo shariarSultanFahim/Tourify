@@ -3,10 +3,8 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css/bundle';
 import { Typewriter } from 'react-simple-typewriter'
-import { useContext, useState } from "react";
 import OurTeam from "../OurTeam/OurTeam";
-import { BiSolidDownArrow,BiSolidUpArrow } from "react-icons/bi";
-import { AuthContext } from "../AuthProvider/AuthProvider";
+
 import Tours from "../Tours/Tours";
 
 
@@ -15,50 +13,12 @@ const Home = () => {
     useDocumentTitle('Home');
 
 
-    const [isOpenFull, setIsOpenFull] = useState(false);
-    const options = ['Bangladesh', 'Thailand', 'Indonesia', 'Malaysia', 'Vietnam','Cambodia'];
-  
-    const toggleFullList = () => {
-      setIsOpenFull(!isOpenFull);
-    };
+    
 
-    const {tours, filterSortTours,setFilterSortTours,showAllBtn, setShowAllBtn} = useContext(AuthContext);
 
-    const filter = (filterBy) =>{
-        const filteredData = tours.filter((item) => {
-            const country= item.country; 
-            return (
-              country.includes(filterBy)
-            );
-          });
-          setFilterSortTours(filteredData);
+    
 
-          if(filterBy == '')
-            setShowAllBtn(false);
-          else
-            setShowAllBtn(true);
-    }
-
-    const sort = (sortBy) =>{
-        if(sortBy == 'avarageCost'){
-            const sortTours = filterSortTours.sort((a,b)=>{
-                const costA = parseFloat(a.avarageCost.split(' ')[1]);
-                const costB = parseFloat(b.avarageCost.split(' ')[1]);
-                return costA - costB;
-            });
-            setFilterSortTours(sortTours);
-
-        }
-        else if(sortBy == 'visitors'){
-            const sortTours = filterSortTours.sort((a,b)=>{
-                const costA = parseFloat(a.visitorsPerYear.split(' ')[0]);
-                const costB = parseFloat(b.visitorsPerYear.split(' ')[0]);
-                return costA - costB;
-            });
-            setFilterSortTours(sortTours);
-        }
-        
-    }
+   
 
 
     return (
@@ -273,63 +233,6 @@ const Home = () => {
             <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-light pl-2 md:pl-0">
             Most Popular <span className="font-medium">Tours</span>
             </h1>
-
-            <div className="mt-10 relative inline-block border rounded-md w-full">
-                <div className="overflow-hidden rounded-md ">
-                    {!isOpenFull && (
-                        <ul className="py-1 grid grid-cols-3 items-center">
-                        {options.slice(0, 3).map((option, index) => (
-                            <li
-                            onClick={()=>{filter(option)}}
-                            key={index}
-                            className=" mx-auto px-4 py-2 text-blue-700 hover:underline hover:cursor-pointer">
-                            {option}
-                            </li>
-                        ))}</ul>
-                    )
-                    }
-                    {isOpenFull && (
-                        <ul className="py-1 grid grid-cols-3 items-center">
-                        {options.map((option, index) => (
-                            <li
-                            onClick={()=>{filter(option)}}
-                            key={index + 3}
-                            className=" mx-auto px-4 py-2 text-blue-700 hover:underline hover:cursor-pointer"
-                            >
-                            {option}
-                            </li>
-                        ))}
-                        </ul>
-                    )}
-                    
-                </div>
-                
-                <button
-                    className="mx-auto w-full text-center text-xs text-green-700 font-bold hover:cursor-pointer mt-2 inline-flex items-center gap-2 justify-center"
-                    onClick={toggleFullList}>
-                    {isOpenFull? 'VIEW FEWER LOCATIONS' : 'VIEW ALL LOCATIONS'}
-                    {isOpenFull?<BiSolidUpArrow/>:<BiSolidDownArrow/> }
-                    
-                </button>
-                
-            </div>
-
-            
-            <div className="flex gap-2 justify-center">
-                <div className="dropdown">
-                    <div tabIndex={0} role="button" className="my-4 btn m-1 btn-primary bg-green-800 border-none hover:bg-green-900">Sort</div>
-                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a onClick={()=>{sort('avarageCost')}}>Avarage Cost</a></li>
-                        <li><a onClick={()=>{sort('visitors')}}>Visitors</a></li>
-                    </ul>
-                </div>
-
-                <button onClick={()=>{filter('')}} 
-                className={`my-4 btn btn-primary bg-green-800 border-none hover:bg-green-900 ${showAllBtn?'':'hidden'}`}
-                >Show All</button>
-            </div>
-
-            
             
             </div>
             {/* Tours Cards */}

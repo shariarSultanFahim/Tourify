@@ -6,7 +6,7 @@ import TourCards from "./TourCards";
 
 
 const Tours = () => {
-    const {filterSortTours, apiLoading} = useContext(AuthContext);
+    const {sortedTours, apiLoading} = useContext(AuthContext);
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -17,7 +17,7 @@ const Tours = () => {
                 <Skeleton count={10}/>
                 </>
                 :
-                filterSortTours.slice(0, 6).map((tour, idx)=> <TourCards key={idx} tour={tour}/>)
+                sortedTours.slice(0, 6).map((tour, idx)=> <TourCards key={idx} tour={tour}/>)
             }
             
         </div>

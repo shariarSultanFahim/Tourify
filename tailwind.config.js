@@ -8,6 +8,6 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"),require("tw-elements-react/dist/plugin.cjs")],
 }
 

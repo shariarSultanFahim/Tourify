@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const TourCards = ({tour}) => {
-    const {_id, name, photo, shortDescription,location,country,avarageCost} = tour;
+    const {_id, name, photo,location,country,avarageCost} = tour;
     const {theme} = useContext(AuthContext);
 
     return (
@@ -31,6 +31,6 @@ const TourCards = ({tour}) => {
     );
 };
 TourCards.propTypes = {
-  tour: PropTypes.array.isRequired,
+  tour: PropTypes.object.isRequired,
 };
 export default TourCards;
