@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import useDocumentTitle from "../../CustomHook/useDocumentTitle";
-import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-
+import Swal from 'sweetalert2'
+import { Link } from "react-router-dom";
 
 const MyTours = () => {
     useDocumentTitle('My Tour List');
     const [myList, setMyList] = useState([]);
-    const {user} = useContext(AuthContext);
+    const {user,tours,setTours,sortedTours,setSortedTours} = useContext(AuthContext);
 
     const email = {email : user.email}
 
@@ -25,11 +25,57 @@ const MyTours = () => {
         })
     });
 
-    const handleUpdate = (id) =>{
-        console.log(id)
+    const handleUpdateForm = (id) =>{
+        Swal.fire({
+            title: "Do you want to save the changes?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Update",
+            denyButtonText: `Don't Update`
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire("Saved!", "", "success");
+            } else if (result.isDenied) {
+              Swal.fire("Changes are not saved", "", "info");
+            }
+          });
     }
-    const handleDelete = (id) =>{
-        console.log(id)
+    const handleDelete = id =>{
+        
+        Swal.fire({
+            title: "Do you want Delete?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Delete",
+            denyButtonText: `Don't Delete`
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+                // Deleting 
+                fetch(`http://localhost:5000/myTourList/${id}`,{
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0){
+
+                        const remainingMyTours = myList.filter(tour => tour._id == id);
+                        const remainingTours = tours.filter(tour => tour._id == id);
+                        const remainingSortedTours = sortedTours.filter(tour => tour._id == id);
+                        setMyList(remainingMyTours);
+                        setTours(remainingTours);
+                        setSortedTours(remainingSortedTours);
+
+                       Swal.fire("Deleted!",
+                        "Your Tour has been deleted.", 
+                        "success"); 
+                    }
+                })
+            } else if (result.isDenied) {
+              Swal.fire("Changes are not saved", "", "info");
+            }
+          });
+
     }
 
     return (
@@ -77,7 +123,7 @@ const MyTours = () => {
                             {list.season}
                         </td>
                         <td>
-                            <button onClick={()=>{handleUpdate(list._id)}} className="btn btn-xs text-white bg-green-800 hover:bg-green-900">Update</button>
+                            <Link to={`/updateTour/${list._id}`} className="btn btn-xs text-white bg-green-800 hover:bg-green-900">Update</Link>
                         </td>
                         <th>
                         <button onClick={()=>{handleDelete(list._id)}} className="btn btn-xs text-white bg-green-800 hover:bg-green-900">Delete</button>
