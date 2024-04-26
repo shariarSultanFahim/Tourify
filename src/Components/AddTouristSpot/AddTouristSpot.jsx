@@ -12,7 +12,21 @@ const AddTouristSpot = () => {
         Aos.init();
     },[])
     useDocumentTitle('Add Tourist Spot');
-    const {user} = useContext(AuthContext);
+    const {user,setTours,setSortedTours,setError,setApiLoading} = useContext(AuthContext);
+
+    const fetchData = async () => {
+        try {
+          const response = await fetch('http://localhost:5000/touristSpots');
+          const responseData = await response.json();
+          setTours(responseData);
+          setSortedTours(responseData);
+
+        } catch (error) {
+          setError(error);  
+        } finally {
+          setApiLoading(false);
+        }
+      };
 
     const handleAddNewTouristSpot =(e)=>{
         e.preventDefault();
@@ -46,6 +60,7 @@ const AddTouristSpot = () => {
             if(data.insertedId){
                 e.target.reset();
                 toast.success('Added Successfully');
+                fetchData();
             }
 
         })
