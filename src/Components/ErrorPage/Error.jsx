@@ -5,7 +5,7 @@ const Error = () => {
     return (
         <div className="container mx-auto">
             <div className="h-80 mt-10 ">
-                <img className="mx-auto h-full" src="../../../src/assets/Lost Tourist-big.png" alt="" />
+                <img className="mx-auto h-full" src="src/assets/Lost Tourist-big.png" alt="" />
             </div>
             <div className="mt-10 text-center">
                 <h1 className="text-3xl">Page Not Found</h1>

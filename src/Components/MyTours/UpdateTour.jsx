@@ -13,7 +13,7 @@ const UpdateTour = () => {
     useEffect(()=>{
         Aos.init();
         
-        fetch(`http://localhost:5000/updateTour/${id}`,{
+        fetch(` https://ph-assingment-10-tourify-server.vercel.app/updateTour/${id}`,{
             method:'GET'
         })
         .then(res => res.json())
@@ -36,7 +36,7 @@ const UpdateTour = () => {
 
         const updatedTourSpot = {name,photo,shortDescription,country,location,avarageCost,season,travelTime,visitorsPerYear};
 
-        fetch(`http://localhost:5000/updateTour/${id}`,{
+        fetch(` https://ph-assingment-10-tourify-server.vercel.app/updateTour/${id}`,{
             method: 'PUT',
             headers:{
                 'content-type' : 'application/json'

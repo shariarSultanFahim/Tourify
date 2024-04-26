@@ -63,7 +63,9 @@ const AuthProvider = ({ children }) => {
 
       const fetchData = async () => {
         try {
-          const response = await fetch('http://localhost:5000/touristSpots');
+          const response = await fetch('https://ph-assingment-10-tourify-server.vercel.app/touristSpots',{
+            method:'GET'
+          });
           const responseData = await response.json();
           setTours(responseData);
           setSortedTours(responseData);

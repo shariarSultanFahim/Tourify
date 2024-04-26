@@ -12,7 +12,7 @@ const MyTours = () => {
     const email = {email : user.email}
 
     useEffect(()=>{
-        fetch('http://localhost:5000/myTourList',{
+        fetch(' https://ph-assingment-10-tourify-server.vercel.app/myTourList',{
             method: 'POST',
             headers:{
                 'content-type' : 'application/json'
@@ -52,7 +52,7 @@ const MyTours = () => {
             if (result.isConfirmed) {
 
                 // Deleting 
-                fetch(`http://localhost:5000/myTourList/${id}`,{
+                fetch(` https://ph-assingment-10-tourify-server.vercel.app/myTourList/${id}`,{
                     method: 'DELETE'
                 })
                 .then(res => res.json())

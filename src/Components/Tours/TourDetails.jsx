@@ -13,7 +13,7 @@ const TourDetails = () => {
     const id = useParams().id;
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/updateTour/${id}`,{
+        fetch(` https://ph-assingment-10-tourify-server.vercel.app/updateTour/${id}`,{
             method:'GET'
         })
         .then(res => res.json())
