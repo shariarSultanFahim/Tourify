@@ -7,6 +7,7 @@ import OurTeam from "../OurTeam/OurTeam";
 
 import Tours from "../Tours/Tours";
 import Countries from "../Countrys/Countries";
+import About from "../About/About";
 
 
 
@@ -17,7 +18,13 @@ const Home = () => {
         <div className="md:container mx-auto min-h-screen transition duration-300 ease-in-out">
             
             {/* Corousel Banner */}
-            <div className="mx-auto w-[98%] h-[170px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">
+            <div className="relative mx-auto w-[98%] h-[170px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">
+                
+                <div className="hidden md:block md:absolute z-[100] top-[90%] left-1/2 -translate-x-1/2 -translate-y-[90%]">
+                    <a href="#exploreTour" className="btn btn-primary bg-green-800 text-white hover:bg-green-900 border-none hover:borded-none">Explore Now</a>
+                </div>
+                
+                
                 <Swiper
                  modules={[Pagination, Scrollbar, A11y,Autoplay]}
                  autoplay={{
@@ -218,20 +225,20 @@ const Home = () => {
                 </SwiperSlide>
                 
                 </Swiper>
+
+                
             </div>
 
-            {/* Property Listing Header and Filter*/}
-            <div className="md:container mx-auto mt-10 md:mt-16 lg:mt-32 mb-10">
-            <h1 className="pb-6 text-center text-2xl md:text-4xl lg:text-5xl font-light">
-            Unveiling Hidden <span className="font-medium md:font-bold text-green-800">Gems</span>
-            </h1>
-            <p className="lg:pb-4 mx-auto w-3/4 md:w-1/2 text-center opacity-70">Explore unique destinations and off-the-beaten-path experiences on our most sought-after tours</p>
-            </div>
+
+            
             {/* Tours Cards */}
             <Tours></Tours>
 
             {/* Countries Card */}
             <Countries></Countries>
+
+            {/* About Us */}
+            <About></About>
 
             {/* Team Section */}
             <OurTeam></OurTeam>

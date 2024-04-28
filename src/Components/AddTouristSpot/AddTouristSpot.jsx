@@ -71,7 +71,7 @@ const AddTouristSpot = () => {
              Add New Tourist <span className="font-medium md:font-bold text-green-800">Spot</span>
             </h1>
         
-            <div  data-aos="fade-up" className=" rounded  p-5 shadow-md">
+            <div  data-aos="fade-up" className="rounded   shadow-md">
                     <div className="w-full shadow sm:rounded-lg">
                     <div  className="px-4 py-8">
                         <form onSubmit={handleAddNewTouristSpot} className="space-y-2 md:space-y-4">

@@ -17,7 +17,7 @@ const OurTeam = () => {
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
             <div className="mx-auto mb-8 max-w-screen-sm lg:mb-16">
                 <h2 className={`mb-4 text-4xl tracking-tight font-extrabold
-                ${theme==='light'?'text-gray-900':''}`}>Our team</h2>
+                ${theme==='light'?'text-gray-900':''}`}>Our <span className="text-green-800">team</span></h2>
                 <p className="font-light text-gray-500 sm:text-xl">Looking for a team that puts you first? Our crew brings a wealth of experience to the table. We are committed to understanding your needs and developing solutions that exceed your expectations.</p>
             </div> 
             <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

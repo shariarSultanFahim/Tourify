@@ -65,7 +65,7 @@ const MyTours = () => {
     }
 
     return (
-        <div className="mx-auto min-h-screen my-10">
+        <div className="md:container mx-auto min-h-screen my-10">
             <h1 className="pb-6 text-center text-2xl md:text-4xl lg:text-5xl">Tours Added by <span className="font-medium md:font-bold text-green-800">You</span></h1>
             {!myList?
                     <>
