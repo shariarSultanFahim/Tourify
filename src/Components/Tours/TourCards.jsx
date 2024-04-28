@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Fade } from "react-awesome-reveal";
 
 const TourCards = ({tour}) => {
     const {_id, name, photo,location,country,avarageCost} = tour;
-    const {theme} = useContext(AuthContext);
 
     return (
         <Fade triggerOnce>

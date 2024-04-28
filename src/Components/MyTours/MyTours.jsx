@@ -12,7 +12,7 @@ const MyTours = () => {
     const email = {email : user.email}
 
     useEffect(()=>{
-        fetch(' https://ph-assingment-10-tourify-server.vercel.app/myTourList',{
+        fetch('https://ph-assingment-10-tourify-server.vercel.app/myTourList',{
             method: 'POST',
             headers:{
                 'content-type' : 'application/json'

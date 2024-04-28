@@ -15,6 +15,7 @@ import AddTouristSpot from "./Components/AddTouristSpot/AddTouristSpot";
 import TourDetails from "./Components/Tours/TourDetails";
 import MyTours from "./Components/MyTours/MyTours";
 import UpdateTour from "./Components/MyTours/UpdateTour";
+import CountryDetails from "./Components/Tours/CountryDetails";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
         element:<PrivateRoute>
           <UpdateTour></UpdateTour>
         </PrivateRoute>
+      },
+      {
+        path:'/countryDetails/:countryName',
+        element:<CountryDetails></CountryDetails>
       }
     ]
   },

@@ -6,6 +6,7 @@ import { Typewriter } from 'react-simple-typewriter'
 import OurTeam from "../OurTeam/OurTeam";
 
 import Tours from "../Tours/Tours";
+import Countries from "../Countrys/Countries";
 
 
 
@@ -225,11 +226,12 @@ const Home = () => {
             Unveiling Hidden <span className="font-medium md:font-bold text-green-800">Gems</span>
             </h1>
             <p className="lg:pb-4 mx-auto w-3/4 md:w-1/2 text-center opacity-70">Explore unique destinations and off-the-beaten-path experiences on our most sought-after tours</p>
-            
-            
             </div>
             {/* Tours Cards */}
             <Tours></Tours>
+
+            {/* Countries Card */}
+            <Countries></Countries>
 
             {/* Team Section */}
             <OurTeam></OurTeam>

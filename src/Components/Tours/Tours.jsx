@@ -15,7 +15,8 @@ const Tours = () => {
             {
                 apiLoading?
                 <>
-                <Skeleton/>
+                <Skeleton count={10}/>
+                <Skeleton count={10}/>
                 <Skeleton count={10}/>
                 </>
                 :
