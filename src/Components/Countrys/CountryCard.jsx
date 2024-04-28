@@ -38,12 +38,11 @@ const CountryCard = ({country}) => {
 
     return (
         <Fade triggerOnce>
-           <Link to={`/countryDetails/${country}`} className={`w-[96%] mx-auto md:w-full`}>
-            <div className='rounded-lg w-full h-60 md:h-96 bg-cover bg-center' 
+           <Link to={`/countryDetails/${country}`} className={`overflow-hidden w-[96%] mx-auto md:w-full`}>
+            <div className='transition duration-300 ease-in-out hover:scale-105 rounded-lg w-full h-60 md:h-96 bg-cover bg-center' 
             style={{backgroundImage:`url(${randomCountryPhoto})`}}>  
                 <div className='h-full flex flex-col justify-center items-center rounded-lg'
                 style={{ backgroundColor:'rgba(0, 0, 0, 0.2)'}}>
-
                     <div className='text-white text-3xl font-medium text-center'>
                         <h1 className='text-xl font-normal '>Visit</h1>
                         <h1 className='inline-flex items-center'><IoLocationOutline/> {country}</h1>

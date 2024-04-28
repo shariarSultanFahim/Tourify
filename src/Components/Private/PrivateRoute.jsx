@@ -11,7 +11,7 @@ const PrivateRoute = ({children}) => {
         return children;
     }
     else if(isLoading)
-        return <div className='md:container min-h-screen mx-auto mt-28 w-10'><span className="loading loading-spinner loading-lg"></span></div>;
+        return <div className='md:container min-h-screen min-w-full flex justify-center items-center'><span className="loading loading-spinner loading-lg"></span></div>;
 
     return <Navigate to="/login" state={location.pathname}></Navigate>
 };

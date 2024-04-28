@@ -9,7 +9,7 @@ const TourCards = ({tour}) => {
     return (
         <Fade triggerOnce>
            <Link to={`/tourDetails/${_id}`} className={`w-[96%] mx-auto md:w-full `}>
-            <div className='rounded-lg w-full h-60 md:h-96 bg-cover bg-center' 
+            <div className='transition duration-300 ease-in-out hover:scale-105 rounded-lg w-full h-60 md:h-96 bg-cover bg-center' 
             style={{backgroundImage:`url(${photo})`}}>  
                 <div className='p-6 h-full flex flex-col justify-between rounded-lg'
                 style={{backgroundColor: 'rgba(0,0,0,0.3)'}}>

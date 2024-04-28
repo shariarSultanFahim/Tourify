@@ -4,8 +4,12 @@ import Footer from "../SharedComponents/Footer/Footer";
 const Root = () => {
     return (
         <div>
-            <NavBar></NavBar>
-            <Outlet></Outlet>
+
+                <NavBar></NavBar>
+      
+            <div className="">
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

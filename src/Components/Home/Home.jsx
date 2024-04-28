@@ -14,7 +14,7 @@ const Home = () => {
     useDocumentTitle('Home');
 
     return (
-        <div className="md:container mx-auto min-h-screen">
+        <div className="md:container mx-auto min-h-screen transition duration-300 ease-in-out">
             
             {/* Corousel Banner */}
             <div className="mx-auto w-[98%] h-[170px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">

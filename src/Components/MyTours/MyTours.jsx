@@ -25,21 +25,7 @@ const MyTours = () => {
         })
     });
 
-    const handleUpdateForm = (id) =>{
-        Swal.fire({
-            title: "Do you want to save the changes?",
-            showDenyButton: true,
-            showCancelButton: true,
-            confirmButtonText: "Update",
-            denyButtonText: `Don't Update`
-          }).then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire("Saved!", "", "success");
-            } else if (result.isDenied) {
-              Swal.fire("Changes are not saved", "", "info");
-            }
-          });
-    }
+    
     const handleDelete = id =>{
         
         Swal.fire({
@@ -81,8 +67,14 @@ const MyTours = () => {
     return (
         <div className="mx-auto min-h-screen my-10">
             <h1 className="pb-6 text-center text-2xl md:text-4xl lg:text-5xl">Tours Added by <span className="font-medium md:font-bold text-green-800">You</span></h1>
+            {!myList?
+                    <>
+                    <div className='h-full w-full flex justify-center items-center'><span className="loading loading-spinner loading-lg"></span></div>
+                    </>:
             <div>
+                
             <div className="overflow-x-auto">
+                
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -98,7 +90,7 @@ const MyTours = () => {
                     <tbody>
                     {/* row 1 */}
                     {
-                        myList.map((list, idx) => 
+                        myList?.map((list, idx) => 
                         <tr key={idx}>
                         <td>
                         <div className="flex items-center gap-3">
@@ -134,8 +126,10 @@ const MyTours = () => {
                     
                     </tbody>
                 </table>
+                
                 </div>
             </div>
+}
         </div>
     );
 };
