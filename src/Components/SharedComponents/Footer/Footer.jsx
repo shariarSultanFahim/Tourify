@@ -5,7 +5,7 @@ const Footer = () => {
             <div className="footer md:container mx-auto md:justify-between">
             <aside>
                 <p className="h-12 w-12">
-                    <img src="src/assets/Tourify.png" alt="" />
+                    <img src="/Tourify.png" alt="" />
                 </p>
                 <p>Tourify - Your Tour Partner<br/>Providing reliable tour plans since 2008</p>
                 <p>Copyright © 2024 - All right reserved </p>

@@ -60,7 +60,7 @@ const NavBar = () => {
                 </ul>
                 </div>
                 <a className="btn btn-ghost text-xl pl-0">
-                    <img className="hidden h-full lg:block " src="src/assets/Tourify.png" alt="" />
+                    <img className="hidden h-full lg:block " src="/Tourify.png" alt="" />
                     Tourify</a>
             </div>
             <div className="navbar-center hidden lg:flex">
