@@ -28,7 +28,7 @@ const About = () => {
         Types of Holiday Deals
         </h1>
         <p>We create and update great new offers for our users every day in our tour operator. Go through our site to compare types of holiday packages.</p>
-        <ul className="list-disc px-4">
+        <ul className="list-disc px-4 text-left space-y-2">
             <li>All-inclusive: All the meals and drinks you want is available for you on-site at your accommodation</li>
             <li>Beach holidays: When is comes to a beach, there is never a bad time for a beach holiday! Relax in the sun or try out scuba diving, or surfing.</li>
             <li>Luxury getaways: Put your comfort as your first priority and submerge yourself in full-on relaxing time with a luxury getaway with our cheap holiday packages .</li>

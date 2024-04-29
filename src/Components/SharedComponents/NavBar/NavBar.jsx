@@ -34,9 +34,8 @@ const NavBar = () => {
     const items = <>
     <NavLink to={"/"} className={({ isActive }) => isActive ? 'px-3 py-2 bg-transparent text-green-800  rounded-xl  ' : 'btn-ghost border-none bg-transparent hover:bg-transparent px-3 py-2 rounded-xl transition duration-300 ease-in-out hover:scale-110  '}>Home</NavLink>
     <NavLink to='/allTouristSpots' className={({ isActive }) => isActive ? 'px-3 py-2 bg-transparent text-green-800  rounded-xl ' : 'btn-ghost border-none bg-transparent hover:bg-transparent px-3 py-2 rounded-xl transition duration-300 ease-in-out hover:scale-110 '}>All Tourists Spot</NavLink>
-    {
-        user&&<NavLink to='/addTouristSpot' className={({ isActive }) => isActive ? 'px-3 py-2 bg-transparent text-green-800  rounded-xl ' : 'btn-ghost border-none bg-transparent hover:bg-transparent px-3 py-2 rounded-xl transition duration-300 ease-in-out hover:scale-110 '}>Add Tourists Spot</NavLink>
-    }
+    <NavLink to='/addTouristSpot' className={({ isActive }) => isActive ? 'px-3 py-2 bg-transparent text-green-800  rounded-xl ' : 'btn-ghost border-none bg-transparent hover:bg-transparent px-3 py-2 rounded-xl transition duration-300 ease-in-out hover:scale-110 '}>Add Tourists Spot</NavLink>
+    
     {
         user&&<NavLink to='/myTourList' className={({ isActive }) => isActive ? 'px-3 py-2 bg-transparent text-green-800  rounded-xl ' : 'btn-ghost border-none bg-transparent hover:bg-transparent px-3 py-2 rounded-xl transition duration-300 ease-in-out hover:scale-110 '}>My List</NavLink>
     }
@@ -46,7 +45,7 @@ const NavBar = () => {
 
     return (
         
-        <div data-aos="fade-down" className="relative md:container z-[999] py-4 mb-4 mx-auto navbar ">
+        <div data-aos="fade-down" className="relative md:container z-[999] py-4 mb-4 mx-auto navbar justify-between ">
             <div className="md:navbar-start">
                 <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
