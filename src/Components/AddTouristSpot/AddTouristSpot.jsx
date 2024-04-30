@@ -12,7 +12,7 @@ const AddTouristSpot = () => {
         Aos.init();
     },[])
     useDocumentTitle('Add Tourist Spot');
-    const {user,setTours,setSortedTours,setError,setApiLoading} = useContext(AuthContext);
+    const {user,setTours,setSortedTours,setError} = useContext(AuthContext);
 
     const fetchData = async () => {
         try {
@@ -39,8 +39,8 @@ const AddTouristSpot = () => {
         const season = e.target.season.value;
         const travelTime = e.target.travelTime.value;
         const visitorsPerYear = e.target.visitors.value;
-        const userName = user.displayName;
-        const userEmail = user.email;
+        const userName = e.target.username.value;
+        const userEmail = e.target.email.value;
 
         const newTouristSpot = {name,photo,shortDescription,country,location,avarageCost,season,travelTime,visitorsPerYear,userName,userEmail}
 
@@ -103,11 +103,19 @@ const AddTouristSpot = () => {
                                 <div><label className="block text-sm font-medium text-gray-700">Total Visitors per Year</label>
                                 <input type="number" name="visitors" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="like- 10000" required/></div>
                             </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                <div><label className="block text-sm font-medium text-gray-700">User Name</label>
+                                <input type="text" name="username" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" defaultValue={user?.displayName} placeholder="Enter Your Name"required/></div>
+
+                                <div><label className="block text-sm font-medium text-gray-700">User Email</label>
+                                <input type="email" name="email" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" defaultValue={user?.email} placeholder="Enter Your Email" required/></div>
+                            </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700">Short Description</label>
                                 <textarea className="w-full border rounded-md border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" name="description" rows="4" required></textarea>
                             </div>
                             <div className="mt-5 text-center"><button className="btn btn-primary profile-button bg-green-800 border-none hover:bg-green-900">Add Spot</button></div>
+                            
                         </form>
                         
                     </div>

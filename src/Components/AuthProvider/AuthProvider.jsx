@@ -7,6 +7,17 @@ export const AuthContext = createContext(null);
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
     const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme) {
+        setTheme(storedTheme);
+        document.querySelector("html").setAttribute("data-theme",storedTheme);
+      }
+
+    }, []);
+
+
     const [user,setUser] = useState(null)
     const [userName, setUserName] = useState(null);
     const [isLoading,setLoading] = useState(true);
